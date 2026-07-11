@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import { Inter, Oswald } from "next/font/google";
+import "./globals.css";
+import { Providers } from "./providers";
+
+const inter = Inter({
+  variable: "--font-body",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  variable: "--font-heading",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "The Artisan Kiln",
+  description: "Ceramic tile order form",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${oswald.variable} h-full antialiased`}
+    >
+      <body className="bg-background text-text font-body h-full">
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
+}
