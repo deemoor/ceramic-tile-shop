@@ -1,6 +1,22 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
   height: 100%;
+}
+
+@layer components {
+  .button {
+    @apply cursor-pointer p-2 transition-opacity hover:opacity-70;
+  }
+
+  .button-primary {
+    @apply cursor-pointer rounded-xl text-text-light bg-primary px-6 py-2 transition-opacity hover:opacity-90;
+  }
+
+  .heading {
+    @apply font-heading tracking-heading uppercase;
+  }
 }
