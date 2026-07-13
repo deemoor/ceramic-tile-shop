@@ -7,6 +7,7 @@ import { selectCartItems } from "@/store/selectors/cartSelectors";
 import { CartSummary } from "./CartSummary";
 import { CartTable } from "./CartTable";
 import { calculateSummary } from "../model/calculateSummary";
+import { AddTilePopover } from "@/features/add-tile-to-cart";
 
 export const ShoppingCart = () => {
   const cartItems = useAppSelector(selectCartItems);
@@ -24,13 +25,20 @@ export const ShoppingCart = () => {
   });
 
   const summary = calculateSummary(items);
+  const cartTileIds = cartItems.map(item => item.tileId);
 
   return (
     <div>
       <CartTable items={items} />
-      {!!items.length && (
-        <CartSummary summary={summary} />
-      )}
+      
+      <div className="flex justify-between">
+        <div className="mt-2">
+          <AddTilePopover cartTileIds={cartTileIds} />
+        </div>
+        {!!items.length && (
+          <CartSummary summary={summary} />
+        )}
+      </div>
     </div>
   );
 };

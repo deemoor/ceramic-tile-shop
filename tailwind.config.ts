@@ -32,6 +32,10 @@ const config: Config = {
       letterSpacing: {
         heading: "0.06em",
       },
+
+      lineHeight: {
+        heading: "1.1",
+      },
     },
   },
 

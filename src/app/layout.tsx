@@ -11,7 +11,7 @@ const inter = Inter({
 const oswald = Oswald({
   variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="bg-background text-text font-body font-normal min-h-full">
+      <body className="bg-background text-text font-body min-h-full">
         <Providers>
           {children}
         </Providers>

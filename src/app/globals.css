@@ -12,12 +12,16 @@ body {
     @apply cursor-pointer font-medium transition-opacity hover:opacity-70;
   }
 
+  .button-surface {
+    @apply button bg-surface border-2 border-black rounded-xl px-6 py-2 hover:opacity-90;
+  }
+
   .button-primary {
-    @apply cursor-pointer font-medium rounded-xl text-text-light bg-primary px-6 py-2 transition-opacity hover:opacity-90;
+    @apply button-surface bg-primary text-text-light;
   }
 
   .heading {
-    @apply font-heading font-medium tracking-heading uppercase;
+    @apply font-heading font-medium tracking-heading leading-heading uppercase;
   }
 
   .order-cell {
