@@ -29,7 +29,7 @@ export const Header = () => {
       </nav>
 
       <div className="relative z-10 ml-auto flex items-center gap-4">
-        <button type="button" className="button">
+        <button type="button" className="button p-2">
           <ShoppingCart size={24} strokeWidth={2} />
         </button>
 

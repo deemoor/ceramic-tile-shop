@@ -9,14 +9,18 @@ body {
 
 @layer components {
   .button {
-    @apply cursor-pointer p-2 transition-opacity hover:opacity-70;
+    @apply cursor-pointer font-medium transition-opacity hover:opacity-70;
   }
 
   .button-primary {
-    @apply cursor-pointer rounded-xl text-text-light bg-primary px-6 py-2 transition-opacity hover:opacity-90;
+    @apply cursor-pointer font-medium rounded-xl text-text-light bg-primary px-6 py-2 transition-opacity hover:opacity-90;
   }
 
   .heading {
-    @apply font-heading tracking-heading uppercase;
+    @apply font-heading font-medium tracking-heading uppercase;
+  }
+
+  .order-cell {
+    @apply border-2 border-black p-2 heading text-center
   }
 }

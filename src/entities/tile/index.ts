@@ -1,2 +1,2 @@
 export type { Tile } from "./model/types";
-export { TileCard } from "./ui/TileCard";
+export { tiles, tilesMap } from "./model/data";

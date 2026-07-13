@@ -1,4 +1,6 @@
-type CartItem = {
-  tileId: string;
+import { Tile } from "@/entities/tile";
+
+export type CartItem = {
+  tileId: Tile["id"];
   quantity: number;
-}
+};

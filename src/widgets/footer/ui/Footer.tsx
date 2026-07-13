@@ -14,7 +14,7 @@ export const Footer = () => {
         {links.map((item) => (
           <a
             href="#"
-            className="heading button px-3 py-0 border-r-2 border-text last:border-r-0"
+            className="heading button px-3 py-0 border-r-2 border-black last:border-r-0"
             key={item}
           >
             {item}

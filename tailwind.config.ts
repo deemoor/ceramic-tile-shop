@@ -11,6 +11,9 @@ const config: Config = {
         primary: "#44537c",
         text: "#1a140a",
         "text-light": "#f7f5e2",
+        "black":"#1a140a",
+        "green": "#21855f",
+        "red": "#aa3c2b"
       },
 
       fontFamily: {
