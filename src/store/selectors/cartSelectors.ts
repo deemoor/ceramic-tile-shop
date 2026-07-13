@@ -7,12 +7,3 @@ export const selectCartItems = (state: RootState) =>
 
 export const selectCartItemsCount = (state: RootState) =>
   state.cart.items.length;
-
-// export const selectCartItemById = (tileId: string) =>
-//   (state: RootState) => state.cart.items.find((item) => item.tileId === tileId);
-
-// export const selectCartQuantity =
-//   (tileId: string) =>
-//   (state: RootState) =>
-//     state.cart.items.find((item) => item.tileId === tileId)
-//       ?.quantity ?? 0;

@@ -10,7 +10,7 @@ export const CartTable = ({ items }: Props) => {
   return (
     <div>
       <table className="w-full">
-        <thead>
+        <thead className="bg-surface">
           <tr>
             <th scope="col" className="order-cell">
               Tile Collection
@@ -25,7 +25,7 @@ export const CartTable = ({ items }: Props) => {
               <span className="lowercase">(sq. ft.)</span>
             </th>
 
-            <th scope="col" className="order-cell">
+            <th scope="col" className="order-cell min-w-[100px]">
               Unit Price <br /> ($)
             </th>
 

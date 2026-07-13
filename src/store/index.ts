@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./slices/cartSlice";
+import visualizerReducer from "./slices/visualizerSlice";
 // import orderReducer from "./slices/orderSlice";
-// import visualizerReducer from "./slices/visualizerSlice";
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
+    visualizer: visualizerReducer,
     // order: orderReducer,
-    // visualizer: visualizerReducer,
   },
 });
 

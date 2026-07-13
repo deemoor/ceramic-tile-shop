@@ -105,7 +105,7 @@ export const AddTilePopover = ({ cartTileIds } : Props) => {
             className="object-cover"
           />
         </div>
-        <span className="heading text-left text-sm leading-4">Add new tile <br /> to cart</span>
+        <span className="heading text-left text-sm leading-[1.1]">Add new tile <br /> to cart</span>
       </button>
 
       {isOpen && (

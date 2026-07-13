@@ -1,1 +1,2 @@
-export * from "./format-price";
+export * from "./format";
+export * from "./array";
