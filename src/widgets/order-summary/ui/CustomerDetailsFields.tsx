@@ -19,7 +19,7 @@ export const CustomerDetailsFields = ({ errors }: Props) => {
         error={errors.customerName}
       />
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 max-xs:grid-cols-1">
         <FormField
           label="Phone"
           name="phone"

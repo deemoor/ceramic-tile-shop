@@ -1,6 +1,6 @@
 "use client";
 
-import { SubmitEventHandler, useState } from "react";
+import { ReactNode, SubmitEventHandler, useState } from "react";
 
 import type { FormErrors } from "@/shared/types";
 
@@ -12,7 +12,11 @@ import { PaymentMethodFields } from "./PaymentMethodFields";
 import { getOrderDetails } from "../lib/getOrderDetails";
 import { getFormErrors } from "@/shared/lib";
 
-export const OrderSummary = () => {
+type Props = {
+  children: ReactNode;
+}
+
+export const OrderSummary = ({ children }: Props) => {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("card");
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -38,6 +42,10 @@ export const OrderSummary = () => {
   return (
     <form onSubmit={handleSubmit} noValidate>
       <CustomerDetailsFields errors={errors} />
+
+      <div className="mt-8 md:hidden">
+        {children}
+      </div>
 
       <div className="mt-8">
         <PaymentMethodFields

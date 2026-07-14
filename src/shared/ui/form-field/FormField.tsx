@@ -22,7 +22,7 @@ export const FormField = ({
   const inputId = id ?? name;
 
   return (
-    <div>
+    <div className="min-w-0"> 
       <div className={`flex gap-2 ${labelPosition === "top" && "flex-col"}`}>
         {label &&
           <label

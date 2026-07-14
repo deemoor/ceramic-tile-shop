@@ -27,4 +27,10 @@ body {
   .order-cell {
     @apply border-2 border-black p-2 heading text-center
   }
+
+   @media (max-width: 640px) {
+    .order-cell {
+      @apply p-1;
+    }
+  }
 }

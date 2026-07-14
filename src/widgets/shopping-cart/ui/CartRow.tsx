@@ -77,11 +77,11 @@ export const CartRow = ({ item }: Props) => {
               className="object-cover"
             />
           </div>
-          <span>{tile.title}</span>
+          <span className="max-sm:text-sm">{tile.title}</span>
         </div>
       </td>
 
-      <td className="order-cell">
+      <td className="order-cell max-lg:hidden">
         <div className="relative size-16">
           <Image
             src={tile.image}
@@ -130,7 +130,7 @@ export const CartRow = ({ item }: Props) => {
             >
               <Plus size={20} />
             </button>
-            <p className="text-[12px]">Add</p>
+            <p className="text-[12px] max-sm:hidden">Add</p>
           </div>
 
           <div className="flex flex-col items-center gap-0.5">
@@ -142,7 +142,7 @@ export const CartRow = ({ item }: Props) => {
             >
               <Trash2 size={24} />
             </button>
-            <p className="text-[12px]">Remove</p>
+            <p className="text-[12px] max-sm:hidden">Remove</p>
           </div>
         </div>
       </td>

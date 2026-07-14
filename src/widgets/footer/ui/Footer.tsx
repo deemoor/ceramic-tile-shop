@@ -9,7 +9,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="m-auto mb-4">
+    <footer className="m-auto mb-4 px-6 max-sm:px-3">
       <div>
         {links.map((item) => (
           <a

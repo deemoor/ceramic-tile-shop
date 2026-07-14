@@ -96,7 +96,7 @@ export const AddTilePopover = ({ cartTileIds } : Props) => {
         {...getReferenceProps()}
       >
         <Plus size={24} />
-        <div className="relative size-7">
+        <div className="relative size-7 max-xs:hidden">
           <Image
             src={availableTiles[0]?.image ?? tiles[0].image}
             alt={availableTiles[0]?.title ?? tiles[0].image}

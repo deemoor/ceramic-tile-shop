@@ -16,21 +16,23 @@ export const CartTable = ({ items }: Props) => {
               Tile Collection
             </th>
 
-            <th scope="col" className="order-cell">
+            <th scope="col" className="order-cell max-lg:hidden">
               Item
             </th>
 
             <th scope="col" className="order-cell">
-              Quantity <br />
+              <span className="max-xs:hidden">Quantity</span>
+              <span className="xs:hidden">Qty.</span> <br />
               <span className="lowercase">(sq. ft.)</span>
             </th>
 
-            <th scope="col" className="order-cell min-w-[100px]">
+            <th scope="col" className="order-cell">
               Unit Price <br /> ($)
             </th>
 
-            <th scope="col" className="order-cell w-[100px]">
-              Actions
+            <th scope="col" className="order-cell w-[100px] max-sm:w-auto">
+              <span className="max-xs:hidden">Actions</span>
+              <span className="xs:hidden">Acts</span>
             </th>
           </tr>
         </thead>

@@ -32,6 +32,10 @@ const config: Config = {
       lineHeight: {
         heading: "1.1",
       },
+
+      screens: {
+        xs: "480px",
+      },
     },
   },
 
