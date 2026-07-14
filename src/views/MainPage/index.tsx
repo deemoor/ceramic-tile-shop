@@ -3,6 +3,7 @@ import { Header } from "@/widgets/header";
 import { OrderFormIntro } from "@/widgets/order-form-intro";
 import { OrderVisualizer } from "@/widgets/order-visualizer";
 import { ShoppingCart } from "@/widgets/shopping-cart"
+import { OrderSummary } from "@/widgets/order-summary";
 
 export function MainPage() {
   return (
@@ -24,7 +25,9 @@ export function MainPage() {
             <OrderVisualizer />
           </div>
 
-          <div className="min-w-0">el-3</div>
+          <div className="min-w-0">
+            <OrderSummary  />
+          </div>
         </div>
       </main>
 
