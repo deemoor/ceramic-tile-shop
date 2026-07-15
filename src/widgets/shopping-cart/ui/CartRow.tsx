@@ -1,3 +1,5 @@
+"use client";
+
 import { Plus, Trash2 } from "lucide-react";
 import type { ShoppingCartItem } from "../model/types";
 import { formatPrice } from "@/shared/lib";

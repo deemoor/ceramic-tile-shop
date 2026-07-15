@@ -34,6 +34,7 @@ export const PaymentMethodFields = ({
             checked={paymentMethod === value}
             onChange={() => onPaymentMethodChange(value)}
             icon={icon && <Icon src={icon} alt={value} size={48} />}
+            key={value}
           />
         ))}
       </div>

@@ -40,6 +40,7 @@ export const PaletteTile = ({ tile }: Props) => {
         src={tile.image}
         alt={tile.title}
         fill
+        sizes="40px"
         draggable={false}
         className="pointer-events-none object-cover"
       />

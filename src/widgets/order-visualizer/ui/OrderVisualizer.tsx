@@ -5,7 +5,6 @@ import {
   DragOverlay,
   MouseSensor,
   TouchSensor,
-  closestCenter,
   pointerWithin,
   useSensor,
   useSensors,
@@ -19,7 +18,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "@/store/hooks";
-import { tilesMap, type Tile } from "@/entities/tile";
+import { tilesMap } from "@/entities/tile";
 import type {
   CellDropData,
   TileDragData,
@@ -93,6 +92,7 @@ export const OrderVisualizer = () => {
 
   return (
     <DndContext
+      id="order-visualizer-dnd"
       sensors={sensors}
       collisionDetection={pointerWithin}
       onDragStart={handleDragStart}

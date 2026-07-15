@@ -1,5 +1,4 @@
 import { CartRow } from "./CartRow";
-
 import type { ShoppingCartItem } from "../model/types";
 
 type Props = {

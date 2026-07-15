@@ -1,6 +1,5 @@
 import { Icon } from "@/shared/ui/icon";
 
-
 const leftTiles = ['/images/tile_7.png', '/images/tile_3.png', '/images/tile_5.png'];
 const rightTiles = ['/images/tile_9.png', '/images/tile_8.png', '/images/tile_4.png'];
 
@@ -17,8 +16,8 @@ export const OrderFormIntro = () => {
         </h1>
         <div className="flex items-center justify-between gap-2 mt-1">
           <div className="flex gap-1 max-2xs:hidden">
-            {leftTiles.map(src => (
-              <Icon src={src} size={28} withBorder />
+            {leftTiles.map((src, i) => (
+              <Icon src={src} size={28} withBorder key={i} />
             ))}
           </div>
 
@@ -27,8 +26,8 @@ export const OrderFormIntro = () => {
           </p>
 
           <div className="flex gap-1 max-2xs:hidden">
-            {rightTiles.map(src => (
-              <Icon src={src} size={28} withBorder />
+            {rightTiles.map((src, i) => (
+              <Icon src={src} size={28} withBorder key={i} />
             ))}
           </div>
         </div>

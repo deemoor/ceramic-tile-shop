@@ -3,11 +3,10 @@
 import { tilesMap } from "@/entities/tile";
 import { useAppSelector } from "@/store/hooks";
 import { selectCartItems } from "@/store/selectors/cartSelectors";
-
 import { CartSummary } from "./CartSummary";
 import { CartTable } from "./CartTable";
-import { calculateSummary } from "../model/calculateSummary";
 import { AddTilePopover } from "@/features/add-tile-to-cart";
+import { calculateSummary } from "../lib/calculateSummary";
 
 export const ShoppingCart = () => {
   const cartItems = useAppSelector(selectCartItems);

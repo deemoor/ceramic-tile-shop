@@ -11,8 +11,8 @@ export const DesignPalette = () => {
       <div className="grid grid-cols-2 gap-2 p-2">
         {tiles.map((tile) => (
           <PaletteTile
-            key={tile.id}
             tile={tile}
+            key={tile.id}
           />
         ))}
       </div>

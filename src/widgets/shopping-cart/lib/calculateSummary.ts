@@ -1,5 +1,6 @@
-import { FREE_DELIVERY_MIN_SUM, SHIPPING_PRICE } from "./constants";
-import { CartSummaryData, ShoppingCartItem } from "./types";
+import { FREE_DELIVERY_MIN_SUM, SHIPPING_PRICE } from "../model/constants";
+import { CartSummaryData, ShoppingCartItem } from "../model/types";
+
 
 export const calculateSummary = (items: ShoppingCartItem[]): CartSummaryData => {
   const subtotal = items.reduce((total, item) => {
