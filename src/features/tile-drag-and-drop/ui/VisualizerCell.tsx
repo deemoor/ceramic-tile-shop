@@ -66,7 +66,8 @@ export const VisualizerCell = ({ index, tileId }: Props) => {
         <Image
           src={tile.image}
           alt={tile.title}
-          fill
+          width={64}
+          height={64}
           draggable={false}
           className="pointer-events-none object-cover"
         />

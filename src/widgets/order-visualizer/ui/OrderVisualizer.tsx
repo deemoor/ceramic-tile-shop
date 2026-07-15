@@ -130,7 +130,8 @@ export const OrderVisualizer = () => {
             <Image
               src={activeTile.image}
               alt={activeTile.title}
-              fill
+              width={64}
+              height={64}
               draggable={false}
               className="object-cover"
             />

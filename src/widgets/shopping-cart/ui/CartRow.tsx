@@ -46,7 +46,7 @@ export const CartRow = ({ item }: Props) => {
             <Icon 
               src={tile.image}
               alt={tile.title}
-              size={48}
+              size={64}
               withBorder
             />
           </div>

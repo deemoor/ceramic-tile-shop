@@ -95,7 +95,7 @@ export const AddTilePopover = ({ cartTileIds } : Props) => {
           <Icon 
             src={availableTiles.length ? availableTiles[0].image : tiles[0].image}
             alt={availableTiles.length ? availableTiles[0].title : tiles[0].image}
-            size={28}
+            size={64}
           />
         </div>
         <span className="text-left text-sm">Add new tile <br /> to cart</span>

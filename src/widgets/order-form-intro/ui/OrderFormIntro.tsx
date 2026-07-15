@@ -17,7 +17,9 @@ export const OrderFormIntro = () => {
         <div className="flex items-center justify-between gap-2 mt-1">
           <div className="flex gap-1 max-2xs:hidden">
             {leftTiles.map((src, i) => (
-              <Icon src={src} size={28} withBorder key={i} />
+              <div className="size-9" key={i}>
+                <Icon src={src} size={64} withBorder />
+              </div>
             ))}
           </div>
 
@@ -27,7 +29,9 @@ export const OrderFormIntro = () => {
 
           <div className="flex gap-1 max-2xs:hidden">
             {rightTiles.map((src, i) => (
-              <Icon src={src} size={28} withBorder key={i} />
+              <div className="size-9"key={i} >
+                <Icon src={src} size={64} withBorder />
+              </div>
             ))}
           </div>
         </div>
