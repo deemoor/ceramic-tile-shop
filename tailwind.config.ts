@@ -17,8 +17,8 @@ const config: Config = {
       },
 
       fontFamily: {
-        body: ["var(--font-body)"],
-        heading: ["var(--font-heading)"],
+        main: ["var(--font-main)"],
+        second: ["var(--font-second)"],
       },
 
       borderRadius: {
@@ -26,15 +26,18 @@ const config: Config = {
       },
 
       letterSpacing: {
-        heading: "0.06em",
+        main: "0.06em",
+        second: "0.02em"
       },
 
       lineHeight: {
-        heading: "1.1",
+        main: "1.1",
+        second: "1.1"
       },
 
       screens: {
         xs: "480px",
+        "2xs": "400px"
       },
     },
   },

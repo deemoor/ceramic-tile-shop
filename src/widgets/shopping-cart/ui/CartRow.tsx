@@ -1,11 +1,10 @@
-import Image from "next/image";
-import { Plus, PlusCircle, Trash2 } from "lucide-react";
-
+import { Plus, Trash2 } from "lucide-react";
 import type { ShoppingCartItem } from "../model/types";
 import { formatPrice } from "@/shared/lib";
 import { useAppDispatch } from "@/store/hooks";
 import { addItem, removeItem, setQuantity } from "@/store/slices/cartSlice";
-import { ChangeEvent, useEffect, useState } from "react";
+import { Icon } from "@/shared/ui/icon";
+import { InputNumber } from "@/shared/ui/input-number";
 
 type Props = {
   item: ShoppingCartItem;
@@ -15,66 +14,38 @@ export const CartRow = ({ item }: Props) => {
   const dispatch = useAppDispatch();
   const { tile, quantity } = item;
 
-  const [inputValue, setInputValue] = useState(String(quantity));
-
-  useEffect(() => {
-    setInputValue(String(quantity));
-  }, [quantity]);
-
-  const handleIncrement = (tileId: string) => {
+  const handleIncrement = () => {
     dispatch(
       addItem({
-        tileId,
+        tileId: tile.id,
         quantity: 1,
       }),
     );
   };
 
-  const handleRemove = (tileId: string) => {
-    dispatch(removeItem(tileId));
-  };
+  const handleUpdate = (value: number) => {
+    dispatch(
+      setQuantity({
+        tileId: tile.id,
+        quantity: value,
+      }),
+    );
+  }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/\D/g, "");
-    setInputValue(value);
+  const handleRemove = () => {
+    dispatch(removeItem(tile.id));
   };
   
-  const applyValue = () => {
-    if (inputValue === '' || inputValue === '0') {
-      dispatch(removeItem(tile.id))
-    }
-
-    const value = Math.max(1, Number(inputValue) || 1);
-   
-    if (value !== quantity) {
-      dispatch(
-        setQuantity({
-          tileId: tile.id,
-          quantity: value,
-        }),
-      );
-    }
-
-    setInputValue(String(value));
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.currentTarget.blur();
-    }
-  };
-
   return (
     <tr>
       <td className="order-cell">
         <div className="flex flex-col items-center gap-1">
-          <div className="relative size-12 border-2 border-black rounded-sm">
-            <Image
+          <div className="relative size-12">
+            <Icon 
               src={tile.image}
               alt={tile.title}
-              fill
-              sizes="48px"
-              className="object-cover"
+              size={48}
+              withBorder
             />
           </div>
           <span className="max-sm:text-sm">{tile.title}</span>
@@ -82,36 +53,24 @@ export const CartRow = ({ item }: Props) => {
       </td>
 
       <td className="order-cell max-lg:hidden">
-        <div className="relative size-16">
-          <Image
+        <div className="relative size-16 m-auto">
+          <Icon 
             src={tile.image}
             alt={tile.title}
-            fill
-            sizes="64px"
-            className="object-cover"
+            size={64}
           />
         </div>
       </td>
 
       <td className="order-cell">
         <div className="flex items-center justify-center">
-          <span>[</span>
-          <label htmlFor={`quantity-${tile.id}`} className="sr-only">
-            Quantity of {tile.title}
-          </label>
-
-          <input
+          <InputNumber
             id={`quantity-${tile.id}`}
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            value={inputValue}
-            onChange={handleChange}
-            onBlur={applyValue}
-            onKeyDown={handleKeyDown}
-            className="h-7 w-12 bg-transparent text-center outline-none"
+            label={`Quantity of ${tile.title}`}
+            value={quantity}
+            onChange={(value) => handleUpdate(value)}
+            onEmpty={handleRemove}
           />
-          <span>]</span>
         </div>
       </td>
 
@@ -124,7 +83,7 @@ export const CartRow = ({ item }: Props) => {
           <div className="flex flex-col items-center gap-0.5">
             <button
               type="button"
-              onClick={() => handleIncrement(tile.id)}
+              onClick={handleIncrement}
               aria-label={`Add one ${tile.title}`}
               className="button bg-green rounded-sm text-background p-0.5"
             >
@@ -136,7 +95,7 @@ export const CartRow = ({ item }: Props) => {
           <div className="flex flex-col items-center gap-0.5">
             <button
               type="button"
-              onClick={() => handleRemove(tile.id)}
+              onClick={handleRemove}
               aria-label={`Remove ${tile.title} from cart`}
               className="button text-red"
             >

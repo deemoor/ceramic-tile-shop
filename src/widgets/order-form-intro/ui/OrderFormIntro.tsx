@@ -1,5 +1,8 @@
-const leftTiles = ['bg-blue-800', 'bg-amber-600', 'bg-emerald-700'];
-const rightTiles = ['bg-blue-900', 'bg-orange-700', 'bg-yellow-600'];
+import { Icon } from "@/shared/ui/icon";
+
+
+const leftTiles = ['/images/tile_7.png', '/images/tile_3.png', '/images/tile_5.png'];
+const rightTiles = ['/images/tile_9.png', '/images/tile_8.png', '/images/tile_4.png'];
 
 export const OrderFormIntro = () => {
   return (
@@ -8,24 +11,24 @@ export const OrderFormIntro = () => {
         <span className="text-4xl">🏛️</span>
       </div>
     
-      <div>
-        <h1 className="heading text-3xl max-md:text-2xl font-bold">
+      <div className="flex flex-col items-center">
+        <h1 className="text-4xl font-semibold max-md:text-3xl max-2xs:text-2xl">
           Ceramic Tile Order Form
         </h1>
         <div className="flex items-center justify-between gap-2 mt-1">
-          <div className="flex gap-1">
-            {leftTiles.map(bg => (
-              <div key={bg} className={`w-7 h-7 ${bg}`} />
+          <div className="flex gap-1 max-2xs:hidden">
+            {leftTiles.map(src => (
+              <Icon src={src} size={28} withBorder />
             ))}
           </div>
 
-          <p className="heading text-lg max-md:text-sm">
+          <p className="text-lg max-md:text-base">
             The Artisan Kiln
           </p>
 
-          <div className="flex gap-1">
-            {rightTiles.map(bg => (
-              <div key={bg} className={`w-7 h-7 ${bg}`} />
+          <div className="flex gap-1 max-2xs:hidden">
+            {rightTiles.map(src => (
+              <Icon src={src} size={28} withBorder />
             ))}
           </div>
         </div>

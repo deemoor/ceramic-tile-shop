@@ -17,8 +17,8 @@ export function MainPage() {
           grid grid-cols-[3fr_3fr_2fr] gap-x-8 gap-y-2 mt-5 items-start
           max-xl:grid-cols-2 max-md:grid-cols-1
         ">
-          <h2 className="heading text-2xl col-span-2 max-xl:col-span-1 max-md:hidden">Shopping cart & design tool</h2>
-          <h2 className="heading text-2xl max-md:hidden">Order summary</h2>
+          <h2 className="text-2xl col-span-2 max-xl:col-span-1 max-md:hidden">Shopping cart & design tool</h2>
+          <h2 className="text-2xl max-md:hidden">Order summary</h2>
           
           <div className="min-w-0 max-md:hidden">
             <ShoppingCart />
@@ -30,7 +30,9 @@ export function MainPage() {
 
           <div className="min-w-0">
             <OrderSummary>
-              <ShoppingCart />
+              <div className="md:hidden">
+                <ShoppingCart />
+              </div>
             </OrderSummary>
           </div>
         </div>

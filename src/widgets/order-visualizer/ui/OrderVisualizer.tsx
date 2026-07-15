@@ -107,16 +107,11 @@ export const OrderVisualizer = () => {
         "
       >
         <div>
-          <div
-            className="
-              heading text-center
-              border-b-2 border-text px-4 py-2
-            "
-          >
+          <div className="text-center border-b-2 border-text px-4 py-2">
             <h2 className="text-xl">
               Visualize your order:
             </h2>
-            <p className="text-sm normal-case">
+            <p className="text-sm text-second">
               Drag and drop tiles here to create patterns.
             </p>
           </div>

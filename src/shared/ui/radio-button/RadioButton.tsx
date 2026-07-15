@@ -1,4 +1,4 @@
-import { cn } from "@/features/add-tile-to-cart/ui/AddTilePopover";
+import { cn } from "@/shared/lib/cn";
 import type { ReactNode } from "react";
 
 type Props = {
@@ -20,11 +20,11 @@ export const RadioButton = ({
 }: Props) => {
   return (
     <label
-      className={`
-        cursor-pointer bg-background transition-opacity hover:opacity-90
-        flex gap-2 items-center p-2 border border-black
-        ${checked && "bg-surface"}
-      `}
+      className={cn(
+        "cursor-pointer bg-background transition-opacity hover:opacity-90",
+        "flex gap-2 items-center p-2 border border-black",
+        checked && "bg-surface"
+      )}
     >
       <input
         type="radio"
@@ -41,7 +41,7 @@ export const RadioButton = ({
           </div>
         )}
 
-        <span className="heading text-center">{label}</span>
+        <span className="text-center">{label}</span>
       </div>
 
     </label>

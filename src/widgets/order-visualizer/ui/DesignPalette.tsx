@@ -3,15 +3,8 @@ import { PaletteTile } from "@/features/tile-drag-and-drop";
 
 export const DesignPalette = () => {
   return (
-    <aside
-      className="border-l-2 border-text bg-surface"
-    >
-      <h2
-        className="
-          border-b-2 border-text px-2 py-2
-          heading text-center
-        "
-      >
+    <aside className="border-l-2 border-text bg-surface">
+      <h2 className="border-b-2 border-text px-2 py-2 text-center">
         Design Palette
       </h2>
 

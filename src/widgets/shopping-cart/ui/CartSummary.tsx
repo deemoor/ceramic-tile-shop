@@ -10,7 +10,7 @@ export const CartSummary = ({ summary }: Props) => {
 
   return (
     <div>
-      <dl className="grid grid-cols-[auto_minmax(101px,auto)] items-stretch heading">
+      <dl className="grid grid-cols-[auto_minmax(101px,auto)] items-stretch">
         <dt className="p-1 text-right">Subtotal:</dt>
         <dd className="order-cell py-1 border-t-0">
           {formatPrice(subtotal)}

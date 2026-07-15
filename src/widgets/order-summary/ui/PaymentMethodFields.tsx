@@ -20,9 +20,12 @@ export const PaymentMethodFields = ({
   return (
     <fieldset className="grid gap-3">
       <legend className="sr-only">Payment method:</legend>
-      <h3 className="heading text-xl">Select Payment Method:</h3>
+      <h3 className="text-xl">Select Payment Method:</h3>
 
-      <div className="grid grid-cols-2 border border-black">
+      <div className="
+        grid grid-cols-2 border border-black 
+        max-md:grid-cols-4 max-sm:grid-cols-2
+      ">
         {paymentMethods.map(({ value, label, icon }) => (
           <RadioButton
             name="paymentMethod"

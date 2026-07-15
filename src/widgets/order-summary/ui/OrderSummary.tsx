@@ -43,7 +43,7 @@ export const OrderSummary = ({ children }: Props) => {
     <form onSubmit={handleSubmit} noValidate>
       <CustomerDetailsFields errors={errors} />
 
-      <div className="mt-8 md:hidden">
+      <div className="mt-8">
         {children}
       </div>
 
@@ -57,7 +57,7 @@ export const OrderSummary = ({ children }: Props) => {
 
       <button
         type="submit"
-        className="button-primary heading mt-4 w-full p-3"
+        className="button-primary mt-4 w-full p-3"
       >
         Place secure order
       </button>

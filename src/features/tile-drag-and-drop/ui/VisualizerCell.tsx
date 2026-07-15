@@ -5,9 +5,9 @@ import {
   useDraggable,
   useDroppable,
 } from "@dnd-kit/core";
-
 import { tilesMap } from "@/entities/tile";
 import { VisualizerCellValue } from "@/shared/types";
+import { cn } from "@/shared/lib/cn";
 
 type Props = {
   index: number;
@@ -53,12 +53,12 @@ export const VisualizerCell = ({ index, tileId }: Props) => {
       ref={setNodeRef}
       type="button"
       aria-label={`Cell ${index + 1}`}
-      className={`
-        relative touch-none border border-black
-        outline-none transition-colors
-        ${isOver ? "bg-surface" : ""}
-        ${isDragging ? "opacity-30" : "opacity-100"}
-      `}
+      className={cn(
+        "relative touch-none border border-black",
+        "outline-none transition-colors",
+        isOver ? "bg-surface" : "",
+        isDragging ? "opacity-30" : "opacity-100"
+      )}
       {...attributes}
       {...listeners}
     >
@@ -68,7 +68,6 @@ export const VisualizerCell = ({ index, tileId }: Props) => {
           alt={tile.title}
           fill
           draggable={false}
-          sizes="100px"
           className="pointer-events-none object-cover"
         />
       )}

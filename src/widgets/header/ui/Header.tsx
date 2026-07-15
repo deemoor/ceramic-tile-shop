@@ -17,7 +17,7 @@ export const Header = () => {
         <ul className="flex items-center gap-4">
           {navigationList.map(({ title, className }) => (
             <li key={title} className={className}>
-              <a href="#" className="button heading text-lg">
+              <a href="#" className="button text-lg">
                 {title}
               </a>
             </li>

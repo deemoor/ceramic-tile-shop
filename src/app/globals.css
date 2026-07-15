@@ -7,9 +7,24 @@ body {
   height: 100%;
 }
 
+@layer base {
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px theme("colors.background") inset;
+    -webkit-text-fill-color: theme("colors.text");
+    caret-color: theme("colors.text");
+  }
+}
 @layer components {
+  .text-main {
+    @apply font-main font-medium tracking-main leading-main uppercase;
+  }
+
+  .text-second {
+    @apply font-second font-normal tracking-second leading-second normal-case;
+  }
+
   .button {
-    @apply cursor-pointer font-medium transition-opacity hover:opacity-70;
+    @apply text-main cursor-pointer font-medium transition-opacity hover:opacity-70;
   }
 
   .button-surface {
@@ -20,12 +35,8 @@ body {
     @apply button-surface bg-primary text-text-light;
   }
 
-  .heading {
-    @apply font-heading font-medium tracking-heading leading-heading uppercase;
-  }
-
   .order-cell {
-    @apply border-2 border-black p-2 heading text-center
+    @apply text-main border-2 border-black p-2 text-center;
   }
 
    @media (max-width: 640px) {

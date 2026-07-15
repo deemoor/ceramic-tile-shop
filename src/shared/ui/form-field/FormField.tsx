@@ -1,6 +1,4 @@
-// features/fill-order-details/ui/FormField.tsx
-
-import { cn } from "@/features/add-tile-to-cart/ui/AddTilePopover";
+import { cn } from "@/shared/lib/cn";
 import { InputHTMLAttributes } from "react";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
@@ -23,11 +21,14 @@ export const FormField = ({
 
   return (
     <div className="min-w-0"> 
-      <div className={`flex gap-2 ${labelPosition === "top" && "flex-col"}`}>
+      <div className={cn(
+        "flex gap-2",
+        labelPosition === "top" && "flex-col"
+      )}>
         {label &&
           <label
             htmlFor={inputId}
-            className="heading shrink-0 text-lg"
+            className="shrink-0 text-lg"
           >
             {label}:
           </label>
@@ -37,14 +38,15 @@ export const FormField = ({
           {...inputProps}
           id={inputId}
           name={name}
-          className={cn("min-w-0 flex-1 border-b-2 border-black bg-background px-1 outline-none",
-            withBorder && "border-2 rounded-1"
+          className={cn(
+            "min-w-0 flex-1 border-b-2 border-black bg-background px-1 outline-none",
+            withBorder && "border-2 rounded-1 py-1 px-2"
           )}
         />
       </div>
 
       {error && (
-        <p className="mt-1 text-sm text-red">
+        <p className="mt-0.5 text-sm text-red text-second">
           {error}
         </p>
       )}

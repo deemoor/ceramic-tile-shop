@@ -8,9 +8,7 @@ export const VisualizerGrid = () => {
   const cells = useAppSelector(selectVisualizerCells);
 
   return (
-    <div
-      className="grid grid-cols-7 grid-rows-7 h-full"
-    >
+    <div className="grid grid-cols-7 grid-rows-7 h-full">
       {cells.map((tileId, index) => (
         <VisualizerCell
           key={index}

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useDraggable } from "@dnd-kit/core";
-
 import type { Tile } from "@/entities/tile";
+import { cn } from "@/shared/lib/cn";
 
 type Props = {
   tile: Tile;
@@ -28,11 +28,11 @@ export const PaletteTile = ({ tile }: Props) => {
       ref={setNodeRef}
       type="button"
       aria-label={`Drag ${tile.title}`}
-      className={`
-        relative aspect-square touch-none overflow-hidden
-        border border-text rounded-1 transition-opacity
-        ${isDragging ? "opacity-40" : "opacity-100"}
-      `}
+      className={cn(
+        "relative aspect-square touch-none overflow-hidden",
+        "border border-text rounded-1 transition-opacity",
+        isDragging ? "opacity-40" : "opacity-100"
+      )}
       {...listeners}
       {...attributes}
     >

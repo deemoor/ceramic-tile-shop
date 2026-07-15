@@ -1,17 +1,22 @@
+import { cn } from "@/shared/lib/cn";
 import Image from "next/image";
 
 type Props = {
   src: string;
-  alt: string;
+  alt?: string;
   size: number;
+  withBorder?: boolean;
 };
 
-export const Icon = ({ src, alt, size }: Props) => (
+export const Icon = ({ src, alt, size, withBorder = false }: Props) => (
   <Image
     src={src}
-    alt={alt}
+    alt={alt ?? 'icon'}
     width={size}
     height={size}
-    className="h-full w-full object-contain"
+    className={cn(
+      "h-full w-full object-cover",
+      withBorder && "border-2 border-black rounded-1"
+    )}
   />
 );
